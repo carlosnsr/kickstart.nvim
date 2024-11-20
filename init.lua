@@ -105,8 +105,22 @@ vim.opt.foldlevel = 10
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+-- keymap to toggle number
+-- vim.keymap.set('n', '<Leader>n', ':set number!<CR>')
+if vim.opt.relativenumber ~= 1 then
+  -- keymap to toggle relative number
+  vim.keymap.set('n', '<Leader>rn', ':set relativenumber!<CR>')
+  -- enable relative line numbers
+  vim.opt.relativenumber = true
+  vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
+    pattern = { '*' },
+    command = 'set number norelativenumber',
+  })
+  vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+    pattern = { '*' },
+    command = 'set number relativenumber',
+  })
+end
 
 -- Disable mouse mode
 vim.opt.mouse = ''
