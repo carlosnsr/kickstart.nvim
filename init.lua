@@ -215,6 +215,20 @@ vim.o.backup = true
 vim.o.backupdir = tmp_dir .. 'backups'
 vim.o.writebackup = true
 
+-- Set all swap-files to go into a central directory
+vim.opt.swapfile = true
+vim.opt.dir = './tmp/swapfiles'
+
+-- So that undos are persistent across buffers and sessions
+vim.opt.undofile = true
+--   Where to store the undo history (be sure to make this a directory)
+vim.opt.undodir = './tmp/undo_histories'
+--
+-- -- Set up backups
+vim.opt.backup = true
+vim.opt.backupdir = './tmp/backups'
+vim.opt.writebackup = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
