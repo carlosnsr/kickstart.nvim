@@ -196,6 +196,22 @@ do
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
   vim.o.confirm = true
+
+  -- Set all swap-files to go into a central directory
+  local home_path = vim.fn.expand '$HOME'
+  local tmp_dir = home_path .. '/.config/nvim/tmp/'
+  vim.o.swapfile = true
+  vim.o.dir = tmp_dir .. 'swapfiles'
+
+  -- So that undos are persistent across buffers and sessions
+  vim.o.undofile = true
+  --   Where to store the undo history (be sure to make this a directory)
+  vim.o.undodir = tmp_dir .. 'undo_histories'
+  --
+  -- -- Set up backups
+  vim.o.backup = true
+  vim.o.backupdir = tmp_dir .. 'backups'
+  vim.o.writebackup = true
 end
 
 -- ============================================================
