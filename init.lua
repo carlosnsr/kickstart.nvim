@@ -99,14 +99,31 @@ vim.g.have_nerd_font = false
 --  For more options, you can see `:help option-list`
 
 -- Enable folding
-vim.opt.foldmethod = 'indent'
-vim.opt.foldlevel = 10
+vim.o.foldmethod = 'indent'
+vim.o.foldlevel = 10
 
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.o.relativenumber = true
+--
+-- keymap to toggle number
+-- vim.keymap.set('n', '<Leader>n', ':set number!<CR>')
+if vim.o.relativenumber ~= 1 then
+  -- keymap to toggle relative number
+  vim.keymap.set('n', '<Leader>rn', ':set relativenumber!<CR>')
+  -- enable relative line numbers
+  vim.o.relativenumber = true
+  vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
+    pattern = { '*' },
+    command = 'set number norelativenumber',
+  })
+  vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+    pattern = { '*' },
+    command = 'set number relativenumber',
+  })
+end
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 -- vim.o.mouse = 'a'
