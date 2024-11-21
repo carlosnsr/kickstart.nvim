@@ -351,6 +351,11 @@ do
         return
       end
 
+      if name == 'markdown-preview.nvim' then
+        vim.fn['mkdp#util#install']()
+        return
+      end
+
       if name == 'nvim-treesitter' then
         if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
         vim.cmd 'TSUpdate'
@@ -847,6 +852,11 @@ do
   }
 
   vim.keymap.set({ 'n', 'v' }, '<leader>f', function() require('conform').format { async = true } end, { desc = '[F]ormat buffer' })
+end
+
+do
+  -- [[ Markdown Preview ]]
+  vim.pack.add { gh 'iamcco/markdown-preview.nvim' }
 end
 
 -- ============================================================
