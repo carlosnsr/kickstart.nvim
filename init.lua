@@ -110,6 +110,14 @@ do
   vim.o.foldmethod = 'indent'
   vim.o.foldlevel = 10
 
+  -- Indentation
+  vim.o.smartindent = true
+  -- Use indentation without hard tabs (see: http://vim.wikia.com/wiki/Indenting_source_code)
+  vim.o.expandtab = true
+  vim.o.smarttab = true
+  vim.o.shiftwidth = 2
+  -- vim.o.softtabstop = 2
+
   -- Make line numbers default
   vim.o.number = true
   -- You can also add relative line numbers, to help with jumping.
