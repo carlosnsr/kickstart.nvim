@@ -1219,6 +1219,9 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
+-- load custom configurations
+require 'plugin_config.typescript-tools'
+
 -- enable Copilot when we start Neovim
 vim.api.nvim_create_autocmd({ 'VimEnter' }, {
   pattern = { '*' },
