@@ -526,6 +526,13 @@ require('lazy').setup({
       },
     },
   },
+  -- LSP for TypeScript
+  -- A fast typescript lsp server
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
+  },
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -544,14 +551,6 @@ require('lazy').setup({
       'saghen/blink.cmp',
       -- Allows extra capabilities provided by nvim-cmp
       -- 'hrsh7th/cmp-nvim-lsp',
-
-      -- LSP for TypeScript
-      -- A fast typescript lsp server
-      {
-        'pmizio/typescript-tools.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-        opts = {},
-      },
     },
     config = function()
       -- Brief aside: **What is LSP?**
