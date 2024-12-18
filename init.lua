@@ -679,6 +679,8 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        eslint_d = {},
+        prettierd = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -741,8 +743,11 @@ require('lazy').setup({
         desc = '[F]ormat buffer',
       },
     },
+    -- see `:help conform` for more information or the [README](https://github.com/stevearc/conform.nvim?tab=readme-ov-file#options)
     opts = {
       notify_on_error = false,
+      -- notify you when no formatters are available for the buffer
+      notify_no_formatters = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -765,7 +770,9 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { 'prettierd', 'eslint_d' },
+        typescript = { 'prettierd', 'eslint_d' },
       },
     },
   },
