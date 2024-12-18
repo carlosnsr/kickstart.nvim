@@ -821,6 +821,8 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
+    'eslint_d',
+    'prettierd',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -885,9 +887,12 @@ end
 -- ============================================================
 do
   -- [[ Formatting ]]
+  -- see `:help conform` for more information or the [README](https://github.com/stevearc/conform.nvim?tab=readme-ov-file#options)
   vim.pack.add { gh 'stevearc/conform.nvim' }
   require('conform').setup {
     notify_on_error = false,
+    -- notify you when no formatters are available for the buffer
+    notify_no_formatters = true,
     format_on_save = function(bufnr)
       -- You can specify filetypes to autoformat on save here:
       local enabled_filetypes = {
@@ -910,7 +915,9 @@ do
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      javascript = { 'prettierd', 'eslint_d' },
+      typescript = { 'prettierd', 'eslint_d' },
     },
   }
 
