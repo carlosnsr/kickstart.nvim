@@ -582,7 +582,6 @@ require('lazy').setup({
     },
     opts = {},
   },
-
   {
     -- Main LSP Configuration
 
