@@ -918,6 +918,8 @@ do
       -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
       javascript = { 'prettierd', 'eslint_d' },
       typescript = { 'prettierd', 'eslint_d' },
+      -- Use the "*" filetype to run formatters on all filetypes.
+      ['*'] = { 'trim_whitespace' },
     },
   }
 
