@@ -919,8 +919,9 @@ do
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
-      javascript = { 'prettierd', 'eslint_d' },
-      typescript = { 'prettierd', 'eslint_d' },
+      javascript = { 'eslint_d', 'prettierd' },
+      typescript = { 'eslint_d', 'prettierd' },
+      vue = { 'eslint_d', 'prettierd' },
       -- Use the "*" filetype to run formatters on all filetypes.
       ['*'] = { 'trim_whitespace' },
     },
