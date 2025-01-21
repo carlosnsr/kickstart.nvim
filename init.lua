@@ -422,6 +422,9 @@ do
     },
   }
 
+  -- Git Plugins
+  vim.pack.add { gh 'tpope/vim-fugitive' }
+
   -- Useful plugin to show you pending keybinds.
   vim.pack.add { gh 'folke/which-key.nvim' }
   require('which-key').setup {
