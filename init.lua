@@ -748,6 +748,7 @@ require('lazy').setup({
         --
         eslint_d = {},
         prettierd = {},
+        vue_language_server = {},
 
         lua_ls = {
           -- cmd = { ... },
