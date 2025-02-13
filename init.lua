@@ -684,7 +684,8 @@ require('lazy').setup({
         --
         eslint_d = {},
         prettierd = {},
-        vue_language_server = {},
+        volar = {}, -- Vue LSP
+        zls = {}, -- Zig LSP
 
         lua_ls = {
           -- cmd = {...},
