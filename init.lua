@@ -407,6 +407,19 @@ do
     command = 'Copilot enable',
   })
 
+  -- further co-pilot/AI integration
+  vim.pack.add { gh 'olimorris/codecompanion.nvim' }
+  require('codecompanion').setup {
+    strategies = {
+      chat = {
+        adapter = 'copilot',
+      },
+      inline = {
+        adapter = 'copilot',
+      },
+    },
+  }
+
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
   -- See `:help gitsigns` to understand what each configuration key does.
