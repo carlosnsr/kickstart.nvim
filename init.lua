@@ -282,6 +282,7 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter',
     },
   },
+  'mfussenegger/nvim-dap', -- Debug Adapter Protocol
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
