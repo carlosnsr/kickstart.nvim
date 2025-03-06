@@ -420,6 +420,9 @@ do
     },
   }
 
+  -- Debug Adapter Protocol
+  vim.pack.add { gh 'mfussenegger/nvim-dap' }
+
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
   -- See `:help gitsigns` to understand what each configuration key does.
