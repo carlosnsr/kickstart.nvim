@@ -407,7 +407,8 @@ do
     command = 'Copilot enable',
   })
 
-  -- further co-pilot/AI integration
+  -- AI Agent Code Companion
+  -- Connect to any LLM and chat with the agent in Neovim
   vim.pack.add { gh 'olimorris/codecompanion.nvim' }
   require('codecompanion').setup {
     strategies = {
@@ -421,6 +422,7 @@ do
   }
 
   -- Debug Adapter Protocol
+  -- Makes it possible for one to debug applications (add breakpoints, step through code, etc.) in Neovim
   vim.pack.add { gh 'mfussenegger/nvim-dap' }
 
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
@@ -441,7 +443,7 @@ do
   -- Git Plugins
   vim.pack.add { gh 'tpope/vim-fugitive' }
 
-  -- Useful plugin to show you pending keybinds.
+  -- WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
   vim.pack.add { gh 'folke/which-key.nvim' }
   require('which-key').setup {
     -- Delay between pressing a key and opening which-key (milliseconds)
@@ -560,6 +562,7 @@ do
 
   ---@type (string|vim.pack.Spec)[]
   local telescope_plugins = {
+    -- "All the lua functions I don't want to write twice". Useless outside of Neovim
     gh 'nvim-lua/plenary.nvim',
     gh 'nvim-telescope/telescope.nvim',
     gh 'nvim-telescope/telescope-ui-select.nvim',
