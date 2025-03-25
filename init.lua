@@ -561,6 +561,8 @@ require('lazy').setup({
   'tpope/vim-fugitive',
 
   -- LSP Plugins
+
+  -- LSP for Lua
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -583,6 +585,7 @@ require('lazy').setup({
     },
     opts = {},
   },
+
   {
     -- Main LSP Configuration
 
