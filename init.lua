@@ -828,6 +828,8 @@ do
     gh 'mason-org/mason.nvim',
     gh 'mason-org/mason-lspconfig.nvim',
     gh 'WhoIsSethDaniel/mason-tool-installer.nvim',
+    -- bridges mason.nvim with the nvim-dap plugin
+    gh 'jay-babu/mason-nvim-dap.nvim',
   }
 
   -- Automatically install LSPs and related tools to stdpath for Neovim
