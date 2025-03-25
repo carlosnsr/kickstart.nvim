@@ -272,17 +272,27 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  -- NOTE: Plugins go here
+
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'github/copilot.vim', -- co-pilot integration
-  { -- further co-pilot/AI integration
+
+  'github/copilot.vim',
+
+  -- AI Agent Code Companion
+  -- Connect to any LLM and chat with the agent in Neovim
+  {
     'olimorris/codecompanion.nvim',
     dependencies = {
+      -- "All the lua functions I don't want to write twice".  Useless outside of Neovim
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
     },
   },
-  'mfussenegger/nvim-dap', -- Debug Adapter Protocol
+
+  -- Debug Adapter Protocol
+  -- Makes it possible for one to debug applications (add breakpoints, step through code, etc.) in Neovim
+  'mfussenegger/nvim-dap',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -324,7 +334,8 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  { -- Useful plugin to show you pending keybinds.
+  -- WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
+  {
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -490,10 +501,12 @@ require('lazy').setup({
     end,
   },
 
-  -- Git Plugins
+  -- Git Plugin
   'tpope/vim-fugitive',
 
   -- LSP Plugins
+
+  -- LSP for Lua
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -506,21 +519,34 @@ require('lazy').setup({
       },
     },
   },
+  -- Lua Language Server (LLS) and definition files for Luvit (provides asynchronous I/O for Lua)
   { 'Bilal2453/luvit-meta', lazy = true },
+
   -- LSP for TypeScript
   -- A fast typescript lsp server
   {
     'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'neovim/nvim-lspconfig',
+    },
     opts = {},
   },
+
   {
     -- Main LSP Configuration
+
+    -- Default Neovim LSP client
     'neovim/nvim-lspconfig',
+
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
+
+      -- Mason: portable package manager for Neovim. Easily installs and manages LSP servers, DAP servers, linters, and formatters.
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+      -- bridges mason.nvim with the lspconfig plugin
       'williamboman/mason-lspconfig.nvim',
+      -- helps users keep up-to-date with their tools and to make certain they have a consistent environment
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
