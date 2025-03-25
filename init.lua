@@ -995,6 +995,28 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+
+  -- possible future plugins
+  -- Lazygit integration.  Lazygit is a terminal UI for git commands.
+  -- 'kdheepak/lazygit.nvim'
+  -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+  -- 'folke/trouble.nvim'
+  -- Write mappings in many modes without having a delay when typing
+  -- 'max397574/better-escape.nvim'
+  -- easily interact with tmux from vim
+  -- 'preservim/vimux'
+  -- A Vim wrapper for running tests on different granularities.
+  -- 'vim-test/vim-test'
+  -- find and replace (or substitute) multiple occurances of the word preserving their case
+  -- 'tpope/vim-abolish'
+  -- Kick off builds and test suites and when the job completes, errors will be loaded and parsed automatically.
+  -- 'tpope/vim-dispatch'
+  -- Vim plugin for editing Ruby on Rails applications (navigation, syntax highlighting, and more)
+  -- Integrates with vim-dispatch to run tests and migrations
+  -- 'tpope/vim-rails'
+  -- lightweight bag of Vim goodies for Bundler
+  -- 'tpope/vim-bundler'
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
