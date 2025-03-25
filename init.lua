@@ -576,6 +576,8 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
       -- helps users keep up-to-date with their tools and to make certain they have a consistent environment
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      -- bridges mason.nvim with the nvim-dap plugin
+      'jay-babu/mason-nvim-dap.nvim',
 
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
