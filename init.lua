@@ -537,7 +537,7 @@ require('lazy').setup({
 
   -- LSP Plugins
 
-  -- LSP for Lua
+  -- LSP Plugins
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -1066,6 +1066,10 @@ require('lazy').setup({
   -- 'tpope/vim-rails'
   -- lightweight bag of Vim goodies for Bundler
   -- 'tpope/vim-bundler'
+  -- Neorg is an all-encompassing tool based around structured note taking, project and task management, time tracking, slideshows, writing typeset documents and much more.
+  -- 'nvim-neorg/neorg'
+  -- a plugin for viewing vim and nvim startup event timing information
+  -- 'dstein64/vim-startuptime'
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -1073,7 +1077,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'ruby', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -1154,11 +1158,13 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
+-- enable Copilot when we start Neovim
 vim.api.nvim_create_autocmd({ 'VimEnter' }, {
   pattern = { '*' },
   command = 'Copilot enable',
 })
 
+-- Intialise code companion to use copilot
 require('codecompanion').setup {
   strategies = {
     chat = {
