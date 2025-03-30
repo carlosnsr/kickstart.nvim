@@ -504,7 +504,14 @@ require('lazy').setup({
   -- Git Plugin
   'tpope/vim-fugitive',
 
-  -- LSP Plugins
+  -- Ruby
+  -- Vim's runtime files for ruby support. This includes syntax highlighting, indentation, omnicompletion, and various useful tools and mappings
+  {
+    'vim-ruby/vim-ruby',
+    config = function()
+      vim.cmd [[autocmd FileType ruby setlocal indentkeys-=.]]
+    end,
+  },
 
   -- LSP Plugins
   {
@@ -521,6 +528,8 @@ require('lazy').setup({
   },
   --  definition files for Luvit (provides asynchronous I/O for Lua) using Lua Language Server (LLS) annotations
   { 'Bilal2453/luvit-meta', lazy = true },
+
+  -- LSP for Ruby
 
   -- LSP for TypeScript
   -- A fast typescript lsp server
