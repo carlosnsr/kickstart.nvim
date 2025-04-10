@@ -1159,10 +1159,10 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- enable Copilot when we start Neovim
-vim.api.nvim_create_autocmd({ 'VimEnter' }, {
-  pattern = { '*' },
-  command = 'Copilot enable',
-})
+-- vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+--   pattern = { '*' },
+--   command = 'Copilot enable',
+-- })
 
 -- Intialise code companion to use copilot
 require('codecompanion').setup {
