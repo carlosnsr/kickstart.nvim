@@ -1158,11 +1158,12 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
--- enable Copilot when we start Neovim
--- vim.api.nvim_create_autocmd({ 'VimEnter' }, {
---   pattern = { '*' },
---   command = 'Copilot enable',
--- })
+-- disable Copilot when we start Neovim (seems to be enabled by default)
+-- Fuck that.  I will turn you on when I need you as opposed to getting useless suggestions by default
+vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+  pattern = { '*' },
+  command = 'Copilot disable',
+})
 
 -- Intialise code companion to use copilot
 require('codecompanion').setup {
