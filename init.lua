@@ -826,7 +826,7 @@ do
     -- You can add other tools here that you want Mason to install
     'eslint_d',
     'prettierd',
-    'volar', -- Vue LSP
+    -- 'volar', -- Vue LSP
     'zls', -- Zig LSP
   })
 
