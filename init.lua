@@ -780,7 +780,7 @@ require('lazy').setup({
         --
         eslint_d = {},
         prettierd = {},
-        volar = {}, -- Vue LSP
+        -- volar = {}, -- Vue LSP
         zls = {}, -- Zig LSP
 
         lua_ls = {
