@@ -407,6 +407,7 @@ require('lazy').setup({
 
   -- AI Agent Code Companion
   -- Connect to any LLM and chat with the agent in Neovim
+  -- Working off of the [project installation file](https://codecompanion.olimorris.dev/installation.html)
   {
     'olimorris/codecompanion.nvim',
     dependencies = {
@@ -416,6 +417,31 @@ require('lazy').setup({
     },
   },
 
+  -- for a cleaner diff when using codecompanion's inline assistant
+  {
+    'echasnovski/mini.diff',
+    config = function()
+      local diff = require 'mini.diff'
+      diff.setup {
+        -- Disabled by default
+        source = diff.gen_source.none(),
+      }
+    end,
+  },
+
+  -- to copy images from your system clipboard into a chat buffer via :PasteImage
+  {
+    'HakonHarnes/img-clip.nvim',
+    opts = {
+      filetypes = {
+        codecompanion = {
+          prompt_for_file_name = false,
+          template = '[Image]($FILE_PATH)',
+          use_absolute_path = true,
+        },
+      },
+    },
+  },
   -- Debug Adapter Protocol
   -- Makes it possible for one to debug applications (add breakpoints, step through code, etc.) in Neovim
   'mfussenegger/nvim-dap',
