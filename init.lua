@@ -863,6 +863,7 @@ do
   end
 
   -- A fast typescript lsp server
+  -- NOTE: be sure to install `typescript` globally via npm or yarn
   vim.pack.add { gh 'pmizio/typescript-tools.nvim' }
   require('typescript-tools').setup {
     settings = {
@@ -886,7 +887,15 @@ do
       tsserver_max_memory = 'auto',
       -- described below
       tsserver_format_options = {},
-      tsserver_file_preferences = {},
+      tsserver_file_preferences = {
+        includeInlayParameterNameHints = 'all',
+        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
       -- locale of all tsserver messages, supported locales you can find here:
       -- https://github.com/microsoft/TypeScript/blob/3c221fc086be52b19801f6e8d82596d04607ede6/src/compiler/utilitiesPublic.ts#L620
       tsserver_locale = 'en',
