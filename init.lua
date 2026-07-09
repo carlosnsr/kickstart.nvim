@@ -410,6 +410,8 @@ do
 
   -- AI Agent Code Companion
   -- Connect to any LLM and chat with the agent in Neovim
+  -- "All the lua functions I don't want to write twice". Useless outside of Neovim
+  vim.pack.add { gh 'nvim-lua/plenary.nvim' }
   vim.pack.add { gh 'olimorris/codecompanion.nvim' }
   require('codecompanion').setup {
     strategies = {
