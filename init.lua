@@ -401,6 +401,12 @@ do
   vim.pack.add { gh 'NMAC427/guess-indent.nvim' }
   require('guess-indent').setup {}
 
+  -- Claude Code IDE integration
+  -- Runs the Claude Code CLI in a terminal split, sharing selections, diffs and diagnostics via MCP
+  vim.pack.add { gh 'coder/claudecode.nvim' }
+  require('claudecode').setup()
+  vim.keymap.set('n', '<leader>ac', '<cmd>ClaudeCode<cr>', { desc = '[A]I [C]laude toggle' })
+
   -- Debug Adapter Protocol
   -- Makes it possible for one to debug applications (add breakpoints, step through code, etc.) in Neovim
   vim.pack.add { gh 'mfussenegger/nvim-dap' }
@@ -433,6 +439,7 @@ do
     spec = {
       { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
       { '<leader>t', group = '[T]oggle' },
+      { '<leader>a', group = '[A]I' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
     },
