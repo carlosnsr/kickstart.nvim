@@ -401,29 +401,6 @@ do
   vim.pack.add { gh 'NMAC427/guess-indent.nvim' }
   require('guess-indent').setup {}
 
-  -- GitHub Copilot integration
-  vim.pack.add { gh 'github/copilot.vim' }
-  vim.api.nvim_create_autocmd({ 'VimEnter' }, {
-    pattern = { '*' },
-    command = 'Copilot enable',
-  })
-
-  -- AI Agent Code Companion
-  -- Connect to any LLM and chat with the agent in Neovim
-  -- "All the lua functions I don't want to write twice". Useless outside of Neovim
-  vim.pack.add { gh 'nvim-lua/plenary.nvim' }
-  vim.pack.add { gh 'olimorris/codecompanion.nvim' }
-  require('codecompanion').setup {
-    strategies = {
-      chat = {
-        adapter = 'copilot',
-      },
-      inline = {
-        adapter = 'copilot',
-      },
-    },
-  }
-
   -- Debug Adapter Protocol
   -- Makes it possible for one to debug applications (add breakpoints, step through code, etc.) in Neovim
   vim.pack.add { gh 'mfussenegger/nvim-dap' }
